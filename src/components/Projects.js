@@ -15,43 +15,70 @@ const Projects = () => {
     const projectData = [
         {
             id: 1,
-            title: 'SIMAM',
-            desc: 'Sistem Informasi Manajemen Mahasiswa berbasis web dengan login Mahasiswa & Admin.',
+            title: 'Web Sistem Antrian Real-Time',
+            desc: 'Web sistem antrian real-time memungkinkan pengguna untuk mengambil nomor antrian secara online dan melihat status antrian secara real-time.',
             type: 'web',
             images: [
-                { src: '/project1-1.png' },
-                { src: '/project1-2.png' },
-                { src: '/project1-3.png' },
-                { src: '/project1-4.png' },
-                { src: '/project1-5.png' },
-                { src: '/project1-6.png' },
-                { src: '/project1-7.png' },
+                { src: '/project8-1.png' },
+                { src: '/project8-2.png' },
+                { src: '/project8-3.png' },
+                { src: '/project8-4.png' },
+                { src: '/project8-5.png' },
+                { src: '/project8-6.png' },
+                { src: '/project8-7.png' },
+                { src: '/project8-8.png' },
+                { src: '/project8-9.png' },
+                { src: '/project8-10.png' },
+                { src: '/project8-11.png' },
+                { src: '/project8-12.png' },
+                { src: '/project8-13.png' },
+                { src: '/project8-14.png' },
             ]
         },
         {
             id: 2,
-            title: 'Pendakian Merbabu',
-            desc: 'Web pendakian & peminjaman alat Gunung Merbabu dengan fitur login dan validasi.',
+            title: 'Web Toko Sablon',
+            desc: 'Web toko sablon adalah platform online yang memungkinkan pengguna untuk membeli berbagai jenis sablon dengan mudah dan praktis.',
             type: 'web',
             images: [
-                { src: '/project2-1.png' },
-                { src: '/project2-2.png' },
-                { src: '/project2-3.png' },
-                { src: '/project2-4.png' },
-                { src: '/project2-5.png' }
+                { src: '/project9-1.png' },
+                { src: '/project9-2.png' },
+                { src: '/project9-3.png' },
+                { src: '/project9-4.png' },
+                { src: '/project9-5.png' },
+                { src: '/project9-6.png' },
+                { src: '/project9-7.png' },
+                { src: '/project9-8.png' },
+                { src: '/project9-9.png' },
+                { src: '/project9-10.png' },
+                { src: '/project9-11.png' },
+                { src: '/project9-12.png' },
+                { src: '/project9-13.png' },
+                { src: '/project9-14.png' },
+                { src: '/project9-15.png' },
+                { src: '/project9-16.png' },
+                { src: '/project9-17.png' },
+                { src: '/project9-18.png' },
             ]
         },
         {
             id: 3,
-            title: 'Diagnosa Penyakit',
-            desc: 'Form gejala & diagnosis berbasis checklist untuk membantu identifikasi penyakit.',
+            title: 'Web Absensi Karyawan',
+            desc: 'web absensi karyawan adalah sebuah platform online yang dirancang untuk memudahkan perusahaan dalam mengelola kehadiran dan absensi karyawan mereka secara efesien dan terorganisir.',
             type: 'web',
             images: [
-                { src: '/project3-1.png' },
-                { src: '/project3-2.png' }
+                { src: '/project7-1.png' },
+                { src: '/project7-2.png' },
+                { src: '/project7-3.png' },
+                { src: '/project7-4.png' },
+                { src: '/project7-5.png' },
+                { src: '/project7-6.png' },
+                { src: '/project7-7.png' },
+                { src: '/project7-8.png' },
+                { src: '/project7-9.png' },
             ]
         },
-         {
+        {
             id: 4,
             title: 'Web Coffe Shop',
             desc: 'Web Coffe Shop memudahkan pembeli untuk memesan coffe,makanan,minuman dan berbagai snak.',
@@ -68,6 +95,45 @@ const Projects = () => {
         },
         {
             id: 5,
+            title: 'SIMAM',
+            desc: 'Sistem Informasi Manajemen Mahasiswa berbasis web dengan login Mahasiswa & Admin.',
+            type: 'web',
+            images: [
+                { src: '/project1-1.png' },
+                { src: '/project1-2.png' },
+                { src: '/project1-3.png' },
+                { src: '/project1-4.png' },
+                { src: '/project1-5.png' },
+                { src: '/project1-6.png' },
+                { src: '/project1-7.png' },
+            ]
+        },
+        {
+            id: 6,
+            title: 'Pendakian Merbabu',
+            desc: 'Web pendakian & peminjaman alat Gunung Merbabu dengan fitur login dan validasi.',
+            type: 'web',
+            images: [
+                { src: '/project2-1.png' },
+                { src: '/project2-2.png' },
+                { src: '/project2-3.png' },
+                { src: '/project2-4.png' },
+                { src: '/project2-5.png' }
+            ]
+        },
+        {
+            id: 7,
+            title: 'Diagnosa Penyakit',
+            desc: 'Form gejala & diagnosis berbasis checklist untuk membantu identifikasi penyakit.',
+            type: 'web',
+            images: [
+                { src: '/project3-1.png' },
+                { src: '/project3-2.png' }
+            ]
+        },
+
+        {
+            id: 8,
             title: 'Web Booking Hotel',
             desc: 'Website pemesanan hotel adalah sebuah platform online yang memungkinkan pengguna untuk mencari, membandingkan, dan memesan kamar hotel secara praktis dan cepat. Sistem ini dirancang untuk mempermudah pengguna dalam menemukan akomodasi yang sesuai dengan kebutuhan dan anggaran mereka.',
             type: 'web',
@@ -81,8 +147,10 @@ const Projects = () => {
                 { src: '/project5-7.jpeg' }
             ]
         },
+
+
         {
-            id: 6,
+            id: 9,
             title: 'Pendakian Merbabu (App)',
             desc: 'Aplikasi pendakian & peminjaman alat Gunung Merbabu dengan fitur login dan validasi.',
             type: 'app',
