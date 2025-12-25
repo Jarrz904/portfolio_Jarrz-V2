@@ -1,0 +1,472 @@
+/* src/App.css (Final - Termasuk Centering About Me Section) */
+
+/* --- IMPORTS & STYLES GLOBAL --- */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    scroll-behavior: smooth;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --bg-color: #081b29;
+    --second-bg-color: #112e42;
+    --text-color: #ededed;
+    --main-color: #00abf0;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+}
+
+/* --- ANIMASI ON SCROLL --- */
+.animate { opacity: 0; transform: translateY(100px); transition: all 0.7s ease-out; transition-delay: calc(0.2s * var(--i)); }
+.animate.show-animate { opacity: 1; transform: translateY(0); }
+
+/* --- HEADING UMUM --- */
+.heading { text-align: center; font-size: 4.5rem; margin-bottom: 3rem; }
+.heading span { color: var(--main-color); }
+
+/* --- TOMBOL UMUM --- */
+.btn { display: inline-block; padding: 1.2rem 2.8rem; background: var(--main-color); border-radius: 4rem; box-shadow: 0 0 1rem var(--main-color); font-size: 1.6rem; color: var(--bg-color); letter-spacing: .1rem; font-weight: 600; transition: .5s ease; }
+.btn:hover { box-shadow: none; }
+
+/* --- HEADER / NAVBAR --- */
+.header { position: fixed; top: 0; left: 0; width: 100%; padding: 2rem 9%; display: flex; justify-content: space-between; align-items: center; z-index: 100; transition: .3s; background: rgba(8, 27, 41, 0.2); backdrop-filter: blur(15px); border-bottom: 1px solid rgba(255, 255, 255, 0.1); overflow: hidden; }
+.header::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, var(--main-color), transparent); animation: animate-neon-border 4s linear infinite; z-index: -1; }
+@keyframes animate-neon-border { 0% { left: -100%; } 100% { left: 100%; } }
+.header.sticky { background: rgba(17, 46, 66, 0.4); border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+.logo { font-size: 2.5rem; color: var(--text-color); font-weight: 600; text-shadow: 0 0 5px var(--main-color); }
+.navbar a { font-size: 1.7rem; color: var(--text-color); font-weight: 500; margin-left: 3.5rem; transition: .3s; }
+.navbar a:hover, .navbar a.active { color: var(--main-color); text-shadow: 0 0 10px var(--main-color), 0 0 20px var(--main-color); }
+#menu-icon { display: none; font-size: 3.6rem; color: var(--text-color); cursor: pointer; }
+
+/* --- HOME SECTION --- */
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10rem 9% 6rem;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+
+.home-content {
+    flex: 1 1 50rem;
+    max-width: 60rem;
+}
+
+.home-content h3 {
+    font-size: 3.2rem;
+    font-weight: 700;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 2rem;
+}
+
+span.multiple-text {
+    color: var(--main-color);
+}
+
+.home-content h1 {
+    font-size: 4.8rem;
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    margin: 2rem 0 4rem;
+    color: var(--text-color);
+    max-width: 90%;
+}
+
+/* Tombol Sosial Media */
+.home-content .social-media {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.home-content .social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 4rem;
+    height: 4rem;
+    background: transparent;
+    border: 0.2rem solid var(--main-color);
+    border-radius: 50%;
+    font-size: 2rem;
+    color: var(--main-color);
+    transition: 0.5s ease;
+}
+
+.home-content .social-media a:hover {
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+/* Gambar Profil */
+.home-img {
+    flex: 1 1 30rem;
+    max-width: 40rem;
+    aspect-ratio: 1 / 1;
+    position: relative;
+    margin: auto;
+}
+
+.home-img img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 0.5rem solid var(--bg-color);
+}
+
+/* Efek Lingkaran Glowing */
+.home-img::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: conic-gradient(from 90deg, var(--main-color), var(--second-bg-color), var(--main-color));
+    animation: rotate-home-img 4s linear infinite;
+    z-index: -1;
+}
+
+.home-img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    border-radius: 50%;
+    border: 0.3rem solid var(--main-color);
+    box-shadow: 0 0 25px var(--main-color), 0 0 50px var(--main-color);
+}
+
+@keyframes rotate-home-img {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* --- ABOUT SECTION --- */
+.about {
+    background: var(--second-bg-color);
+    color: var(--text-color);
+    min-height: 100vh;
+    padding: 10rem 9% 6rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+
+.about-img {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    border: .4rem solid var(--main-color);
+    box-shadow: 0 0 3rem var(--main-color);
+    flex-shrink: 0;
+}
+
+.about-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.about-content {
+    flex-grow: 1;
+    max-width: 70rem;
+}
+
+.about-content .heading {
+    text-align: left;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-content h3 {
+    font-size: 2.6rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.about-content .about-bio {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    margin-bottom: 4rem;
+}
+
+
+/* --- SERVICES SECTION --- */
+.services-container { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 2rem; }
+.services-box { flex: 1 1 30rem; background: var(--second-bg-color); padding: 3rem 2rem 4rem; border-radius: 2rem; text-align: center; border: .2rem solid var(--bg-color); transition: .5s ease; }
+.services-box:hover { border-color: var(--main-color); transform: scale(1.02); box-shadow: 0 0 1.5rem var(--main-color); }
+.services-box i { font-size: 7rem; color: var(--main-color); }
+.services-box h3 { font-size: 2.6rem; margin-top: 1rem; }
+.services-box p { font-size: 1.6rem; margin: 1rem 0 3rem; }
+
+/* --- SKILLS SECTION --- */
+.skills { background: var(--second-bg-color); }
+.skills-container { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 5rem; }
+.skills-column { flex: 1 1 45%; }
+.skills-column .title { font-size: 2.5rem; margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: .2rem solid var(--main-color); display: inline-block; }
+.skills-box .skill { margin-bottom: 2rem; }
+.skills-box .skill h4 { font-size: 1.8rem; display: flex; justify-content: space-between; }
+.progress-bar { width: 100%; height: 1rem; background: var(--bg-color); border-radius: .5rem; margin-top: .5rem; }
+.progress-bar span { display: block; height: 100%; background: var(--main-color); border-radius: .5rem; }
+.skills-box.professional { display: flex; flex-wrap: wrap; justify-content: space-around; gap: 2rem; margin-top: 4rem; }
+.circular-progress { --size: 12rem; width: var(--size); height: var(--size); border-radius: 50%; background: conic-gradient(var(--main-color) calc(var(--p) * 3.6deg), var(--bg-color) 0deg); display: flex; flex-direction: column; justify-content: center; align-items: center; position: relative; }
+.circular-progress::before { content: ''; position: absolute; width: calc(var(--size) - 2rem); height: calc(var(--size) - 2rem); background: var(--second-bg-color); border-radius: 50%; }
+.progress-value { position: relative; font-size: 2.5rem; font-weight: 600; }
+.progress-label { position: relative; font-size: 1.4rem; margin-top: .5rem; }
+/* --- SKILLS (RAPI & ESTETIS) --- */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    gap: 4rem;
+    align-items: flex-start;
+    padding: 2rem 0;
+}
+
+.skills-column {
+    background: var(--bg-color);
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 1.2rem rgba(0, 171, 240, 0.2);
+}
+
+.skills-column .title {
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+    color: var(--main-color);
+    border-bottom: 0.3rem solid var(--main-color);
+    padding-bottom: 1rem;
+}
+
+.skills-box .skill {
+    margin-bottom: 2rem;
+}
+
+.skills-box .skill h4 {
+    font-size: 1.8rem;
+    margin-bottom: .5rem;
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-color);
+}
+
+.progress-bar {
+    height: 1.2rem;
+    background-color: #0a2b3f;
+    border-radius: .6rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar span {
+    display: block;
+    height: 100%;
+    background: var(--main-color);
+    border-radius: .6rem;
+    transition: width 0.6s ease-in-out;
+}
+
+/* Professional Skills Circular */
+.skills-box.professional {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.circular-progress {
+    --size: 10rem;
+    width: var(--size);
+    height: var(--size);
+    background: conic-gradient(var(--main-color) calc(var(--p) * 3.6deg), var(--bg-color) 0deg);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 0 1rem rgba(0, 171, 240, 0.3);
+}
+
+.circular-progress::before {
+    content: '';
+    position: absolute;
+    width: calc(var(--size) - 1.5rem);
+    height: calc(var(--size) - 1.5rem);
+    background: var(--second-bg-color);
+    border-radius: 50%;
+}
+
+.progress-value {
+    position: relative;
+    font-size: 2.4rem;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+.progress-label {
+    position: relative;
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: .4rem;
+}
+
+
+/* --- PROJECTS SECTION --- */
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+  gap: 3rem;
+  align-items: start;
+}
+
+.project-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--second-bg-color);
+  border-radius: 2rem;
+  padding: 2rem;
+  box-shadow: 0 0 1rem var(--bg-color);
+  height: 100%;
+}
+
+.project-box {
+  width: 100%;
+  height: 22rem;
+  overflow: hidden;
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.project-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.project-box:hover img {
+  transform: scale(1.05);
+}
+
+.project-caption {
+  text-align: center;
+}
+
+.project-caption h3 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: var(--main-color);
+}
+
+.project-caption p {
+  font-size: 1.6rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+.filter-btn.active {
+    background: var(--main-color);
+    color: var(--bg-color);
+    box-shadow: 0 0 1rem var(--main-color);
+}
+
+
+
+/* --- CONTACT SECTION --- */
+.contact { background: var(--second-bg-color); }
+.contact-container { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 5rem; }
+.contact-info { flex: 1 1 40%; }
+.contact-info h3 { font-size: 2.4rem; margin-bottom: 1rem; }
+.contact-info p { font-size: 1.6rem; margin-bottom: 1.5rem; display: flex; align-items: center; }
+.contact-info i { color: var(--main-color); font-size: 2rem; margin-right: 1rem; }
+form { flex: 1 1 55%; display: flex; flex-direction: column; }
+form input, form textarea { width: 100%; padding: 1.5rem; font-size: 1.6rem; color: var(--text-color); background: var(--bg-color); border-radius: .8rem; margin-bottom: 2rem; }
+form textarea { resize: none; }
+form .btn { cursor: pointer; align-self: flex-start; }
+
+/* --- FOOTER --- */
+.footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; padding: 2rem 9%; background: var(--bg-color); }
+.footer p { font-size: 1.6rem; }
+.footer-iconTop a { display: inline-flex; justify-content: center; align-items: center; padding: .8rem; background: var(--main-color); border-radius: .8rem; transition: .5s ease; }
+.footer-iconTop a:hover { box-shadow: 0 0 1rem var(--main-color); }
+.footer-iconTop a i { font-size: 2.4rem; color: var(--bg-color); }
+
+
+/* --- RESPONSIF --- */
+@media (max-width: 1200px) { html { font-size: 55%; } }
+@media (max-width: 991px) { 
+    .header { padding: 2rem 3%; } 
+    section { padding: 10rem 3% 2rem; } 
+    .footer { padding: 2rem 3%; } 
+    .home { flex-direction: column; text-align: center; } 
+    .home-content h3 { font-size: 2.6rem; } 
+    .home-content h1 { font-size: 5rem; } 
+    .home-img { width: 70vw; height: 70vw; margin-top: 4rem; } 
+    .about-content { max-width: 100%; } /* Izinkan konten about mengisi lebar penuh di tablet */
+}
+
+@media (max-width: 768px) {
+    #menu-icon { display: block; }
+    .navbar { position: absolute; top: 100%; left: -100%; width: 100%; padding: 1rem 3%; background: var(--bg-color); border-top: .1rem solid rgba(255, 255, 255, .2); box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .2); transition: .25s ease; z-index: 1; }
+    .navbar.active { left: 0; }
+    .navbar a { display: block; font-size: 2rem; margin: 3rem 0; text-align: center; }
+    
+    .about-container { flex-direction: column; }
+    .about-content { text-align: center; }
+    .about-content .heading { text-align: center; }
+    .tab-titles { justify-content: center; }
+    .tab-link { margin: 0 1.5rem; }
+    .tab-contents ul { text-align: left; }
+
+    .skills-container, .contact-container { flex-direction: column; }
+}

@@ -1,0 +1,99 @@
+/* src/components/Skill.css (atau Skills.css) */
+
+/* Penataan Konten Technical Skills */
+.technical-skills-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem 1.5rem; /* Jarak vertikal dan horizontal */
+    padding: 1rem;
+}
+
+/* Wrapper untuk setiap skill (lingkaran + teks di bawahnya) */
+.skill-wrapper {
+    display: flex;
+    flex-direction: column; /* Menyusun ikon di atas dan teks di bawah */
+    align-items: center;
+    width: 100px; /* Memberi lebar agar tidak terlalu rapat */
+}
+
+/* Lingkaran yang berisi ikon */
+.skill-item {
+    width: 80px;
+    height: 80px;
+    background: var(--second-bg-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Menggunakan variabel warna yang kita definisikan di JS */
+    color: var(--skill-color); 
+    border: 2px solid var(--skill-color);
+    transition: all 0.4s ease; /* Transisi yang lebih halus */
+}
+
+/* Nama skill di bawah lingkaran */
+.skill-name {
+    margin-top: 1rem; /* Jarak antara lingkaran dan teks */
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-align: center;
+}
+
+/* --- EFEK HOVER YANG LEBIH CANTIK --- */
+.skill-wrapper:hover .skill-item {
+    /* Saat di-hover, background berubah menjadi warna logo */
+    background: var(--skill-color);
+    /* Warna ikon berubah menjadi warna background utama agar kontras */
+    color: var(--bg-color);
+    /* Memberi bayangan sesuai warna logo untuk efek "glow" */
+    box-shadow: 0 0 20px var(--skill-color);
+    /* Sedikit mengangkat ikon ke atas */
+    transform: translateY(-10px);
+}
+
+.skill-wrapper:hover .skill-name {
+    /* Mengubah warna teks saat di-hover agar serasi */
+    color: var(--main-color);
+}
+
+
+/* === Styling untuk Professional Skills Anda (TIDAK BERUBAH) === */
+.skills-box.professional {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+.circular-progress {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: conic-gradient(var(--main-color) calc(var(--p) * 1%), var(--second-bg-color) 0);
+}
+.circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 85px;
+    height: 85px;
+    background: var(--bg-color);
+    border-radius: 50%;
+}
+.progress-value {
+    position: relative;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.progress-label {
+    position: relative;
+    font-size: 1.2rem;
+    margin-top: 1.5rem;
+    color: var(--text-color);
+}
